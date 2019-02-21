@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { Component } from 'react'
 import { StyleSheet, View } from 'react-native'
 import Reservations from './src/containers/Reservations'
 import NewReservation from './src/containers/NewReservation'
@@ -8,9 +9,13 @@ const containers = {
   NEW_RESERVATION: 'NewReservation'
 }
 
-class App extends Component {
+interface State {
+  currentScreen: string
+}
 
-  constructor(props){
+class App extends Component<any, State> {
+
+  constructor(props: any){
     super(props)
     this.state = {
       currentScreen: containers.RESERVATIONS
